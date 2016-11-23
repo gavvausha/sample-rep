@@ -1,0 +1,18 @@
+<?PHP
+// create object
+$zip = new ZipArchive();
+
+// open archive 
+if ($zip->open('ufpdf.zip', ZIPARCHIVE::CREATE) !== TRUE) {
+    die ("Could not open archive");
+}
+
+// add all .php files in directory to archive
+foreach (glob ('*.php') as $f) {
+    $zip->addFile(realpath($f)) or die ("ERROR: Could not add file: $f");
+}
+
+// close and save archive
+$zip->close();
+echo "Archive created successfully.";   
+?> 

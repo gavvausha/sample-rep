@@ -1,0 +1,2 @@
+"4 1 4 2 3" is jolly
+"5 1 4 2 -1 6" is not a jolly

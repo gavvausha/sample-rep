@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/JavaScript">
+function killCopy(e) {
+	return false;
+}
+function reEnable() {
+	return true;
+}
+document.onselectstart = new Function ("return false");
+if(window.sidebar) {
+	document.onmousedown = killCopy();
+	document.onclick     = reEnable();
+}
+</script>
+</head>
+<body>
+<p> The following text is not copyable... 
+The following is disabled:
+getmyinode, getopt, getrusage, extension_loaded, dl, mysql_pconnect, crack_check, crack_closedict, crack_getlastmessage, crack_opendict, fsockopen, pfsockopen,  mysql_list_dbs, mysql_stat, ini_get, ini_get_all, ini_alter, ini_set, get_current_user, get_defined_constants, get_include_path,  php_ini_scanned_files, php_uname, phpcredits, restore_include_path, set_include_path, set_time_limit, version_compare, zend_version, getmypid, getmyuid, getmygid, assert_options, assert, fopen, fwrite, fread, file, fpassthru, file, mail, opendir, readdir, closedir</p>
+</body>
+</html>

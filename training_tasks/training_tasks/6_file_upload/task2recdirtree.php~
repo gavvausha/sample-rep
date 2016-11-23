@@ -1,0 +1,21 @@
+<?php
+$doc = new DOMDocument('1.0');
+$doc->formatOutput = true;
+
+$root = $doc->createElement('root');
+$root = $doc->appendChild($root);
+$it = new RecursiveTreeIterator(new RecursiveDirectoryIterator('/home/usha/www/usha'));
+  
+foreach($it as $path) {
+	$folder=basename($path);
+	print_r($path);
+		if($path->isFile()) {
+			$title = $doc->createElement('folder');
+			$title = $root->appendChild($title);
+			$text = $doc->createTextNode($folder);
+			$text = $title->appendChild($text);
+			echo $path . "<br />";
+		}
+}
+echo 'Wrote: ' . $doc->save("output.xml") . ' bytes'; 
+?>

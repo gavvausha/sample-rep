@@ -1,0 +1,11 @@
+<?php
+$filename = tempnam("/uploads", "FOO");
+echo $filename;
+//the name of our file.
+$content = "This is our test file"; //what we will be writing to our file.
+$strlength = strlen($content); //gets the length of our $content string.
+$create = fopen($filename, "w"); //uses fopen to create our file.
+$write = fwrite($create, $content, $strlength); //writes our string to our file.
+$close = fclose($create); //closes our file
+echo("File Created, Click <a href='$filename'> Here </a> to view it.");
+?>

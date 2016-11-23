@@ -1,0 +1,9 @@
+<?php
+		$dest = 'uploads';
+		$file = 'ufpdf.zip';
+		$zip = new ZipArchive;
+		$zip->open($file);
+		$zip->extractTo($dest);
+		$zip->close();
+		echo "Ok!";
+?>
